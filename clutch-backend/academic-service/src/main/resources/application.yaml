@@ -36,6 +36,6 @@ academic:
   semester:
     start-date: "2026-01-20"
 
-IDENTITY_SERVICE_URL: ${IDENTITY_SERVICE_URL:http://localhost:8081}
+IDENTITY_SERVICE_URL: http://identity-service:8081
 jwt:
   secret: ${JWT_SECRET}

@@ -34,3 +34,14 @@ target/
 # =========================
 .DS_Store
 Thumbs.db
+.env.txt
+*.env
+# =========================
+# Local Test Data
+# =========================
+cgpa.csv
+enrollments.csv
+subjects.csv
+subjects.txt
+timetable.csv
+users.csv
