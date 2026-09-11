@@ -61,7 +61,7 @@ public class TimetableBlockController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
 
         // 1. Resolve the requested calendar date to an enumerated day (e.g., "MONDAY")
-        String dayOfWeek = date.getDayOfWeek().name().substring(0,3);
+        String dayOfWeek = date.getDayOfWeek().name();
 
         // 2. Fetch the "Blueprint" classes scheduled for this day
         List<TimetableBlock> blocksToday = blockRepository.findAllByTeacherIdAndDayOfWeek(teacherId, dayOfWeek);

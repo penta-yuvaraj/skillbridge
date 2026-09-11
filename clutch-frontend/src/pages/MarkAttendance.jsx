@@ -110,7 +110,7 @@ export default function MarkAttendance() {
       };
 
       // Ensure your backend endpoint in AcademyAdminController is actually mapped to POST /api/v1/attendance
-      await axios.post('/api/v1/attendance', batchPayload, {
+      await axios.post('/api/v1/attendance/', batchPayload, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

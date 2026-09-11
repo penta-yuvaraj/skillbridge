@@ -7,16 +7,14 @@ export default function StudentTimetable() {
   const [isLoading, setIsLoading] = useState(true);
   
 
-  const daysOfWeek = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'];
-  
-  // Map the full names to the 3-letter database codes
-  const dbDayMap = {
-    'MONDAY': 'MON',
-    'TUESDAY': 'TUE',
-    'WEDNESDAY': 'WED',
-    'THURSDAY': 'THU',
-    'FRIDAY': 'FRI'
-  };
+  const daysOfWeek = [
+  'MONDAY',
+  'TUESDAY',
+  'WEDNESDAY',
+  'THURSDAY',
+  'FRIDAY',
+  'SATURDAY'
+];
   
   const todayIndex = new Date().getDay() - 1; 
   const currentDay = todayIndex >= 0 && todayIndex <= 4 ? daysOfWeek[todayIndex] : 'MONDAY';
@@ -45,8 +43,8 @@ export default function StudentTimetable() {
 
   
   const dailyClasses = schedule
-    .filter(cls => cls.dayOfWeek?.toUpperCase() === dbDayMap[selectedDay])
-    .sort((a, b) => a.startTime.localeCompare(b.startTime));
+  .filter(cls => cls.dayOfWeek?.toUpperCase() === selectedDay)
+  .sort((a, b) => a.startTime.localeCompare(b.startTime));
 
   const formatTime = (timeStr) => {
     if (!timeStr) return '';
